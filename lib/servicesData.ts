@@ -37,7 +37,7 @@ export const servicesData: Service[] = [
     metaTitle: "Premium Balcony Invisible Grills Installation in Hyderabad | John Invisible Grills",
     metaDesc: "Protect your family with premium Balcony Invisible Grills. High-tensile SS 316 cables, professional installation across Hyderabad. Get a free quote today!",
     keyword: "Balcony Invisible Grills Hyderabad",
-    image: "/images/balconygrill.webp"
+    image: "/images/birdgrill.jpg"
   },
   {
     slug: "child-safety-invisible-grills",
@@ -64,7 +64,7 @@ export const servicesData: Service[] = [
     metaTitle: "Child Safety Invisible Grills Hyderabad | High-Tensile Child Safety Barriers",
     metaDesc: "Ensure absolute child safety in your high-rise home. Install high-tensile, child-proof invisible grills on balconies and windows. Schedule a free site visit.",
     keyword: "Child Safety Invisible Grills",
-    image: "/images/childrengrill.jpg"
+    image: "/images/carousel3.webp"
   },
   {
     slug: "pet-safety-invisible-grills",
@@ -91,7 +91,7 @@ export const servicesData: Service[] = [
     metaTitle: "Pet Safety Invisible Grills Hyderabad | Cat & Dog Safety Balcony Wires",
     metaDesc: "Keep your active cats and dogs secure. Our ultra-narrow pet safety invisible grills prevent falls without blocking airflow. Book a free site measurement.",
     keyword: "Pet Safety Invisible Grills Hyderabad",
-    image: "/images/service_pet_safety.png"
+    image: "/images/balconygrill.webp"
   },
   {
     slug: "window-invisible-grills",
@@ -172,7 +172,7 @@ export const servicesData: Service[] = [
     metaTitle: "Anti-Pigeon & Bird Protection Invisible Grills Hyderabad | Rust-Free",
     metaDesc: "Keep pigeons and birds away from your balconies with sleek, rust-free bird protection invisible grills. Durable SS 316 cables. Free estimate.",
     keyword: "Bird Protection Invisible Grills Hyderabad",
-    image: "/images/antibirdbalcony.webp"
+    image: "/images/carousel.webp"
   },
   {
     slug: "terrace-invisible-grills",
@@ -199,7 +199,7 @@ export const servicesData: Service[] = [
     metaTitle: "Terrace & Penthouse Invisible Grills Hyderabad | Rooftop Safety Wires",
     metaDesc: "Secure your rooftop terraces, penthouses, and gardens. High-tension, weather-resistant SS 316 invisible grills. Best price guaranteed in Hyderabad.",
     keyword: "Terrace Invisible Grills Hyderabad",
-    image: "/images/service_terrace.png"
+    image: "/images/johnterracegrill.webp"
   },
   {
     slug: "staircase-invisible-grills",

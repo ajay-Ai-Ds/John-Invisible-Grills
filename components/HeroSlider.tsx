@@ -41,7 +41,7 @@ export default function HeroSlider() {
       tagline: "Toddler & Kids Safety Specialist",
       ctaText: "Book Site Visit",
       ctaLink: "/contact#quote-form",
-      bgImage: "/images/carousl2.webp",
+      bgImage: "/images/johnterracegrill.webp",
       gradient: "from-black/90 via-black/55 to-transparent",
       icon: <Award className="text-brass w-5 h-5" />
     },
@@ -63,7 +63,7 @@ export default function HeroSlider() {
       tagline: "Architectural Elegance",
       ctaText: "Explore French Windows",
       ctaLink: "/services/french-window-invisible-grills",
-      bgImage: "/images/balconygrill.webp",
+      bgImage: "/images/birdgrill.jpg",
       gradient: "from-black/90 via-black/60 to-transparent",
       icon: <Shield className="text-brass w-5 h-5" />
     }

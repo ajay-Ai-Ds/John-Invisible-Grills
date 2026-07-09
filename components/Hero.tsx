@@ -10,6 +10,7 @@ const heroImages = [
   "/images/carousl2.webp",
   "/images/carousel3.webp",
   "/images/customgrill.jpg",
+  "/images/carousel.webp",
   "/images/hero_balcony_grill.png",
 ];
 
@@ -34,7 +35,7 @@ export default function Hero() {
   const textY = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
 
   return (
-    <div ref={ref} className="relative w-full h-screen min-h-[700px] flex items-center justify-center overflow-hidden bg-background selection:bg-primary/30">
+    <div ref={ref} className="relative w-full h-screen min-h-[500px] sm:min-h-[700px] flex items-center justify-center overflow-hidden bg-background selection:bg-primary/30">
       
       {/* Background Architectural Carousel with Parallax */}
       <motion.div 
@@ -55,13 +56,14 @@ export default function Hero() {
               alt="Premium Invisible Grill Installation"
               fill
               priority={currentImageIndex === 0}
-              className="object-cover object-center"
+              className="object-cover object-[center_20%] md:object-center"
               sizes="100vw"
             />
           </motion.div>
         </AnimatePresence>
         {/* Soft Animated Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent z-10 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent z-10 pointer-events-none sm:hidden" />
       </motion.div>
 
       {/* Floating Glass Cards / Badges */}
@@ -111,9 +113,9 @@ export default function Hero() {
       {/* Main Content */}
       <motion.div 
         style={{ y: textY }}
-        className="relative z-30 max-w-[1400px] w-full mx-auto px-6 lg:px-10 flex flex-col justify-center h-full pt-20 pointer-events-none"
+        className="relative z-30 max-w-[1400px] w-full mx-auto px-6 lg:px-10 flex flex-col justify-end sm:justify-center h-full pb-24 sm:pb-0 pt-32 sm:pt-20 pointer-events-none"
       >
-        <div className="max-w-3xl space-y-8 pointer-events-auto">
+        <div className="max-w-3xl space-y-5 sm:space-y-8 pointer-events-auto mt-auto sm:mt-0">
           
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -167,7 +169,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1, duration: 1 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center text-white/50 space-y-2 pointer-events-none"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 hidden sm:flex flex-col items-center text-white/50 space-y-2 pointer-events-none"
       >
         <span className="text-xs font-bold uppercase tracking-widest">Scroll to Explore</span>
         <motion.div
