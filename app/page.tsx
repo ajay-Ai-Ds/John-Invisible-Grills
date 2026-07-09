@@ -188,17 +188,25 @@ export default function HomePage() {
                   </p>
                 </div>
               </div>
-              <div className="px-4 pb-4">
+              <div className="px-4 pb-4 flex items-center justify-between mt-auto pt-2">
                 <Link
                   href={`/services/${service.slug}`}
-                  className={`text-sm font-bold flex items-center space-x-2 w-fit ${getServiceColor(service.slug)} group/link`}
+                  className={`text-sm font-bold flex items-center space-x-2 ${getServiceColor(service.slug)} group/link`}
                   aria-label={`Explore ${service.title}`}
                 >
-                  <span>Explore Solution</span>
-                  <div className="w-6 h-6 rounded-full bg-gray-50 flex items-center justify-center group-hover/link:bg-current transition-colors">
+                  <span>Explore</span>
+                  <div className="w-6 h-6 rounded-full bg-gray-50 flex items-center justify-center group-hover/link:bg-current transition-colors shadow-sm">
                     <ChevronRight size={12} className="text-foreground group-hover/link:text-white transition-colors" />
                   </div>
                 </Link>
+                <a
+                  href="tel:+919912373373"
+                  className="flex items-center space-x-1.5 text-xs font-bold bg-[#1E6AE9] text-white hover:bg-blue-600 px-3 py-1.5 rounded-full transition-colors shadow-sm"
+                  aria-label="Call Now"
+                >
+                  <Phone size={12} className="fill-current" />
+                  <span>Call Now</span>
+                </a>
               </div>
             </div>
           ))}

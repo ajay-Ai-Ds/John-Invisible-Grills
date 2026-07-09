@@ -14,8 +14,6 @@ export default function ContactForm({ embedded = false, prefilledService = "", p
     name: "",
     phone: "",
     area: prefilledArea || "",
-    propertyType: "Apartment",
-    message: prefilledService ? `Interested in getting a quote for ${prefilledService}.` : ""
   });
   
   const [submitted, setSubmitted] = useState(false);
@@ -36,8 +34,6 @@ export default function ContactForm({ embedded = false, prefilledService = "", p
           Name: formData.name,
           Phone: formData.phone,
           Area: formData.area,
-          PropertyType: formData.propertyType,
-          Message: formData.message,
           _subject: `New Invisible Grill Enquiry - ${formData.area || "Hyderabad"}`,
           _template: "basic",
           _captcha: "false"
@@ -133,40 +129,7 @@ export default function ContactForm({ embedded = false, prefilledService = "", p
           />
         </div>
 
-        {/* Property Type Dropdown */}
-        <div>
-          <label htmlFor="propertyType" className="block text-xs font-bold text-graphite uppercase tracking-wide mb-1">
-            Property Type
-          </label>
-          <select
-            id="propertyType"
-            value={formData.propertyType}
-            onChange={(e) => setFormData({ ...formData, propertyType: e.target.value })}
-            className="w-full bg-gray-50 border border-gray-200 rounded-sm px-4 py-3 text-sm text-graphite focus:bg-white focus:border-brass focus:ring-0 transition-colors"
-          >
-            <option value="Apartment">Apartment / Flat</option>
-            <option value="Villa">Villa / Gated House</option>
-            <option value="Duplex House">Duplex Home</option>
-            <option value="Commercial Office">Commercial / Corporate Office</option>
-            <option value="Penthouse / Rooftop">Penthouse / Rooftop</option>
-            <option value="Other">Other Property</option>
-          </select>
-        </div>
 
-        {/* Message / Requirement Field */}
-        <div>
-          <label htmlFor="message" className="block text-xs font-bold text-graphite uppercase tracking-wide mb-1">
-            Requirements / Message
-          </label>
-          <textarea
-            id="message"
-            rows={3}
-            placeholder="Describe your balcony/window sizes or specific requirements..."
-            value={formData.message}
-            onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-            className="w-full bg-gray-50 border border-gray-200 rounded-sm px-4 py-3 text-sm text-graphite focus:bg-white focus:border-brass focus:ring-0 transition-colors resize-none"
-          ></textarea>
-        </div>
 
         {/* Submit Button */}
         <button

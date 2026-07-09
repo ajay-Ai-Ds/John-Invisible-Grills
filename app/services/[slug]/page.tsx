@@ -2,7 +2,7 @@ import React from "react";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-import { ShieldCheck, Check, Sparkles, MapPin, ChevronRight } from "lucide-react";
+import { ShieldCheck, Check, Sparkles, MapPin, ChevronRight, Phone } from "lucide-react";
 import { servicesData, Service } from "@/lib/servicesData";
 import { locationsData } from "@/lib/locationsData";
 import ContactForm from "@/components/ContactForm";
@@ -200,14 +200,23 @@ export default async function ServicePage({ params }: Props) {
                     {rel.shortDesc}
                   </p>
                 </div>
-                <Link
-                  href={`/services/${rel.slug}`}
-                  className="text-xxs font-bold text-brass hover:text-graphite flex items-center space-x-1 group"
-                  aria-label={`Explore ${rel.title}`}
-                >
-                  <span>Explore Solution</span>
-                  <ChevronRight size={12} className="group-hover:translate-x-0.5 transition-transform" />
-                </Link>
+                <div className="flex items-center justify-between mt-auto pt-3">
+                  <Link
+                    href={`/services/${rel.slug}`}
+                    className="text-xxs font-bold text-brass hover:text-graphite flex items-center space-x-1 group"
+                    aria-label={`Explore ${rel.title}`}
+                  >
+                    <span>Explore</span>
+                    <ChevronRight size={12} className="group-hover:translate-x-0.5 transition-transform" />
+                  </Link>
+                  <a
+                    href="tel:+919912373373"
+                    className="flex items-center space-x-1 text-[10px] font-bold bg-brass text-white hover:bg-graphite px-2.5 py-1 rounded-full transition-colors"
+                  >
+                    <Phone size={10} className="fill-current" />
+                    <span>Call Now</span>
+                  </a>
+                </div>
               </div>
             ))}
           </div>

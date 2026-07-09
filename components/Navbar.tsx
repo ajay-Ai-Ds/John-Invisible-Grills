@@ -27,28 +27,28 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="sticky top-0 left-0 w-full z-40 glass-nav h-[72px] md:h-[80px] flex items-center transition-all duration-[400ms] select-none">
+      <nav className="sticky top-0 left-0 w-full z-40 glass-nav h-[80px] flex items-center transition-all duration-[400ms] select-none">
         <div className="max-w-[1400px] w-full mx-auto px-6 lg:px-10">
           <div className="flex items-center justify-between">
             {/* Logo */}
             <div className="flex-shrink-0 flex items-center">
               <Link href="/" className="flex items-center gap-[8px] md:gap-[12px] group">
                 {/* Premium Animated Icon */}
-                <div className="relative w-[56px] h-[56px] md:w-[64px] md:h-[64px] group-hover:scale-105 transition-transform duration-[400ms] ease-out shrink-0">
-                  <Image 
-                    src="/images/logo-icon.png" 
-                    alt="John Invisible Grills Logo" 
-                    fill 
+                <div className="relative w-[64px] h-[64px] md:w-[72px] md:h-[72px] group-hover:scale-105 transition-transform duration-[400ms] ease-out shrink-0">
+                  <Image
+                    src="/images/logo-icon.png"
+                    alt="John Invisible Grills Logo"
+                    fill
                     className="object-contain scale-[1.25] md:scale-100"
                     priority
                   />
                 </div>
                 {/* Premium Typographic Wordmark */}
                 <div className="flex flex-col justify-center mt-0.5">
-                  <span className="text-[14.5px] sm:text-[16px] md:text-lg font-heading font-[800] tracking-[-0.02em] text-[#111111] leading-none">
+                  <span className="text-[17px] sm:text-[18px] md:text-xl font-heading font-[900] tracking-[-0.02em] text-[#111111] leading-none">
                     JOHN INVISIBLE
                   </span>
-                  <span className="block text-[8.5px] sm:text-[10px] md:text-[12px] font-[600] tracking-[0.45em] text-[#E91E63] uppercase leading-none mt-1.5 md:mt-1.5">
+                  <span className="block text-[10px] sm:text-[11px] md:text-[13px] font-[700] tracking-[0.45em] text-[#E91E63] uppercase leading-none mt-1.5 md:mt-1.5">
                     GRILLS
                   </span>
                 </div>
@@ -63,9 +63,8 @@ export default function Navbar() {
                   <Link
                     key={link.name}
                     href={link.href}
-                    className={`text-sm font-semibold transition-colors duration-200 ${
-                      isActive ? "text-primary" : "text-gray-600 hover:text-foreground"
-                    }`}
+                    className={`text-sm font-semibold transition-colors duration-200 ${isActive ? "text-primary" : "text-gray-600 hover:text-foreground"
+                      }`}
                   >
                     {link.name}
                   </Link>
@@ -136,7 +135,7 @@ export default function Navbar() {
                   <X size={20} />
                 </button>
               </div>
-              
+
               <div className="flex-1 overflow-y-auto py-6 px-6 flex flex-col space-y-4">
                 {navLinks.map((link) => {
                   const isActive = pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href));
@@ -144,9 +143,8 @@ export default function Navbar() {
                     <Link
                       key={link.name}
                       href={link.href}
-                      className={`text-xl font-bold transition-colors p-3 rounded-xl ${
-                        isActive ? "text-primary bg-primary/5" : "text-gray-500 hover:bg-gray-50 hover:text-foreground"
-                      }`}
+                      className={`text-xl font-bold transition-colors p-3 rounded-xl ${isActive ? "text-primary bg-primary/5" : "text-gray-500 hover:bg-gray-50 hover:text-foreground"
+                        }`}
                     >
                       {link.name}
                     </Link>
