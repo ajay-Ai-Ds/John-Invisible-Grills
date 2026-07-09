@@ -108,7 +108,7 @@ export default function HomePage() {
       {/* 2. Trust Indicators Strip */}
       <section className="bg-primary py-8 text-white select-none">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 text-center">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-6 text-center">
             {[
               "Free Site Visit",
               "Premium Steel",
@@ -117,9 +117,9 @@ export default function HomePage() {
               "HQ Kukatpally",
               "10-Yr Warranty"
             ].map((text, idx) => (
-              <div key={idx} className="text-sm font-bold tracking-widest uppercase flex items-center justify-center space-x-2">
-                <CheckCircle size={16} className="text-white/80" />
-                <span>{text}</span>
+              <div key={idx} className="text-[10px] sm:text-sm font-bold tracking-widest uppercase flex items-center justify-center space-x-1.5 sm:space-x-2 leading-tight">
+                <CheckCircle size={14} className="text-white/80 shrink-0 sm:w-4 sm:h-4" />
+                <span className="whitespace-normal break-words">{text}</span>
               </div>
             ))}
           </div>
@@ -146,31 +146,31 @@ export default function HomePage() {
             >
               <div>
                 {/* Premium Image Container */}
-                <div className="relative w-full aspect-[4/3] rounded-[20px] overflow-hidden mb-6 bg-light-bg p-6 flex items-center justify-center">
+                <div className="relative w-full aspect-[4/3] sm:aspect-[16/9] md:aspect-[4/3] rounded-[20px] overflow-hidden mb-6 bg-light-bg flex items-center justify-center">
                   <Image
                     src={service.image}
                     alt={service.title}
                     fill
-                    className={`object-contain transition-transform duration-500 ${
-                      service.slug === 'villa-invisible-grills' 
-                        ? 'scale-150 group-hover:scale-[1.6] p-2' 
-                        : 'p-4 group-hover:scale-105'
-                    }`}
+                    className="object-cover object-center"
                     sizes="(max-width: 768px) 100vw, 400px"
                   />
                   {/* Floating Glass Badges */}
-                  <div className="absolute top-4 left-4 glass-badge px-3 py-1.5 rounded-full">
-                    <span className="text-[10px] font-bold text-foreground uppercase tracking-widest">Premium</span>
+                  <div className="absolute top-3 left-3 sm:top-4 sm:left-4 flex flex-wrap gap-2 pr-3">
+                    <div className="glass-badge px-2.5 py-1.5 rounded-full">
+                      <span className="text-[9px] font-bold text-foreground uppercase tracking-widest">Premium</span>
+                    </div>
+                    <div className="glass-badge px-2.5 py-1.5 rounded-full">
+                      <span className="text-[9px] font-bold text-foreground uppercase tracking-widest">316 Marine Grade</span>
+                    </div>
                   </div>
-                  <div className="absolute top-4 right-4 glass-badge px-3 py-1.5 rounded-full">
-                    <span className="text-[10px] font-bold text-foreground uppercase tracking-widest">316 Marine Grade</span>
-                  </div>
-                  <div className="absolute bottom-4 left-4 glass-badge px-3 py-1.5 rounded-full flex items-center space-x-1">
-                    <ShieldCheck size={12} className={getServiceColor(service.slug)} />
-                    <span className="text-[10px] font-bold text-foreground uppercase tracking-widest">Child Safe</span>
-                  </div>
-                  <div className="absolute bottom-4 right-4 glass-badge px-3 py-1.5 rounded-full">
-                    <span className="text-[10px] font-bold text-foreground uppercase tracking-widest">10Y Warranty</span>
+                  <div className="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 flex flex-wrap gap-2 pr-3">
+                    <div className="glass-badge px-2.5 py-1.5 rounded-full flex items-center space-x-1">
+                      <ShieldCheck size={12} className={getServiceColor(service.slug)} />
+                      <span className="text-[9px] font-bold text-foreground uppercase tracking-widest">Child Safe</span>
+                    </div>
+                    <div className="glass-badge px-2.5 py-1.5 rounded-full">
+                      <span className="text-[9px] font-bold text-foreground uppercase tracking-widest">10Y Warranty</span>
+                    </div>
                   </div>
                 </div>
                 

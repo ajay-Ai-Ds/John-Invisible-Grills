@@ -34,12 +34,12 @@ export default function Navbar() {
             <div className="flex-shrink-0 flex items-center">
               <Link href="/" className="flex items-center gap-[8px] md:gap-[12px] group">
                 {/* Premium Animated Icon */}
-                <div className="relative w-[46px] h-[46px] md:w-[64px] md:h-[64px] group-hover:scale-105 transition-transform duration-[400ms] ease-out flex-shrink-0">
+                <div className="relative w-[56px] h-[56px] md:w-[64px] md:h-[64px] group-hover:scale-105 transition-transform duration-[400ms] ease-out shrink-0">
                   <Image 
                     src="/images/logo-icon.png" 
                     alt="John Invisible Grills Logo" 
                     fill 
-                    className="object-contain scale-[1.3] md:scale-[1.5]"
+                    className="object-contain scale-[1.25] md:scale-100"
                     priority
                   />
                 </div>

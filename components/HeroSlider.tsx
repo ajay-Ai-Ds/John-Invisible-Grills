@@ -77,45 +77,61 @@ export default function HeroSlider() {
     setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
   };
 
+  const [isPaused, setIsPaused] = useState(false);
+
   useEffect(() => {
+    if (isPaused) return;
     const timer = setInterval(() => {
       nextSlide();
     }, 6000); // 6 seconds auto-rotate
     return () => clearInterval(timer);
-  }, [nextSlide]);
+  }, [nextSlide, isPaused]);
+
+  const handleTouchStart = () => setIsPaused(true);
+  const handleTouchEnd = () => setIsPaused(false);
 
   return (
-    <div className="relative w-full h-[600px] md:h-[650px] lg:h-[700px] overflow-hidden bg-graphite select-none">
-      {slides.map((slide, index) => {
-        const isActive = index === currentSlide;
-        return (
-          <div
-            key={slide.id}
-            className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out ${
-              isActive ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none"
-            }`}
-          >
-            {/* Background Image with zoom animation */}
-            <div className="absolute inset-0 w-full h-full">
-              <motion.div
-                initial={false}
-                animate={{ scale: isActive && !shouldReduceMotion ? 1 : 1.05 }}
-                transition={{ duration: 6, ease: "easeOut" }}
-                className="absolute inset-0 w-full h-full"
-              >
-                <Image
-                  src={slide.bgImage}
-                  alt={slide.title}
-                  fill
-                  priority // Preloads all images since they are in the DOM
-                  className="object-cover object-center"
-                  sizes="100vw"
-                />
-              </motion.div>
-              {/* Dark & Gradient Overlay for readability */}
-              <div className={`absolute inset-0 bg-gradient-to-r ${slide.gradient}`} />
-              <div className="absolute inset-0 bg-black/35" />
-            </div>
+    <div 
+      className="relative w-full aspect-[4/5] sm:aspect-auto sm:h-[600px] md:h-[650px] lg:h-[700px] overflow-hidden bg-graphite select-none"
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
+      onMouseEnter={handleTouchStart}
+      onMouseLeave={handleTouchEnd}
+    >
+      <div 
+        className="flex h-full w-full transition-transform duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]"
+        style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+      >
+        {slides.map((slide, index) => {
+          const isActive = index === currentSlide;
+          return (
+            <div
+              key={slide.id}
+              className="relative w-full h-full flex-shrink-0"
+              aria-hidden={!isActive}
+            >
+              {/* Background Image with zoom animation */}
+              <div className="absolute inset-0 w-full h-full">
+                <motion.div
+                  initial={false}
+                  animate={{ scale: isActive && !shouldReduceMotion ? 1 : 1.05 }}
+                  transition={{ duration: 6, ease: "easeOut" }}
+                  className="absolute inset-0 w-full h-full"
+                >
+                  <Image
+                    src={slide.bgImage}
+                    alt={slide.title}
+                    fill
+                    priority // Preloads all images since they are in the DOM
+                    className="object-cover object-[70%_center] md:object-center"
+                    sizes="100vw"
+                  />
+                </motion.div>
+                {/* Dark & Gradient Overlay for readability */}
+                <div className={`absolute inset-0 bg-gradient-to-r ${slide.gradient}`} />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent sm:hidden" />
+                <div className="absolute inset-0 bg-black/35" />
+              </div>
 
             {/* Slide Content */}
             <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center text-white">
@@ -174,9 +190,11 @@ export default function HeroSlider() {
                 </motion.div>
               </div>
             </div>
-          </div>
-        );
-      })}
+              </div>
+            </div>
+          );
+        })}
+      </div>
 
       {/* Navigation Arrows */}
       <button

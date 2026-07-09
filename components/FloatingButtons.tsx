@@ -36,7 +36,7 @@ export default function FloatingButtons() {
         {showScrollTop && (
           <button
             onClick={scrollToTop}
-            className="bg-graphite text-white hover:bg-brass p-3.5 rounded-full shadow-lg transition-all duration-300 hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-brass animate-fade-in"
+            className="bg-primary text-white hover:bg-brass p-3.5 rounded-full shadow-lg transition-all duration-300 hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-brass animate-fade-in"
             aria-label="Back to Top"
           >
             <ArrowUp size={22} />
