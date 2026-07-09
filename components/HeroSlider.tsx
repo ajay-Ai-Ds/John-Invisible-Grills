@@ -122,7 +122,7 @@ export default function HeroSlider() {
                     src={slide.bgImage}
                     alt={slide.title}
                     fill
-                    priority // Preloads all images since they are in the DOM
+                    priority={index === 0}
                     className="object-cover object-[70%_center] md:object-center"
                     sizes="100vw"
                   />
@@ -189,7 +189,6 @@ export default function HeroSlider() {
                   </a>
                 </motion.div>
               </div>
-            </div>
               </div>
             </div>
           );

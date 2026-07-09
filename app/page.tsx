@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import dynamic from "next/dynamic";
 import {
   ShieldCheck,
   CheckCircle,
@@ -17,10 +18,11 @@ import {
   Layers,
   HeartHandshake
 } from "lucide-react";
-import Hero from "@/components/Hero";
-import ContactForm from "@/components/ContactForm";
-import Accordion from "@/components/UI/Accordion";
 import { servicesData } from "@/lib/servicesData";
+
+const Hero = dynamic(() => import("@/components/Hero"));
+const ContactForm = dynamic(() => import("@/components/ContactForm"));
+const Accordion = dynamic(() => import("@/components/UI/Accordion"));
 
 // Accent colors mapping based on globals.css variables
 function getServiceColor(slug: string) {
@@ -190,6 +192,7 @@ export default function HomePage() {
                 <Link
                   href={`/services/${service.slug}`}
                   className={`text-sm font-bold flex items-center space-x-2 w-fit ${getServiceColor(service.slug)} group/link`}
+                  aria-label={`Explore ${service.title}`}
                 >
                   <span>Explore Solution</span>
                   <div className="w-6 h-6 rounded-full bg-gray-50 flex items-center justify-center group-hover/link:bg-current transition-colors">
@@ -223,7 +226,7 @@ export default function HomePage() {
                     <Eye className="text-primary w-6 h-6" />
                   </div>
                   <div>
-                    <h4 className="text-base font-bold text-foreground">Unblocked Views</h4>
+                    <h3 className="text-base font-bold text-foreground">Unblocked Views</h3>
                     <p className="text-sm text-gray-500 font-medium mt-1">2mm stainless steel lines disappear from a distance.</p>
                   </div>
                 </div>
@@ -232,7 +235,7 @@ export default function HomePage() {
                     <Flame className="text-primary w-6 h-6" />
                   </div>
                   <div>
-                    <h4 className="text-base font-bold text-foreground">Emergency Safe</h4>
+                    <h3 className="text-base font-bold text-foreground">Emergency Safe</h3>
                     <p className="text-sm text-gray-500 font-medium mt-1">Easily cut during emergencies with a wire cutter.</p>
                   </div>
                 </div>
@@ -241,7 +244,7 @@ export default function HomePage() {
                     <ShieldCheck className="text-primary w-6 h-6" />
                   </div>
                   <div>
-                    <h4 className="text-base font-bold text-foreground">Anti-Rust SS 316</h4>
+                    <h3 className="text-base font-bold text-foreground">Anti-Rust SS 316</h3>
                     <p className="text-sm text-gray-500 font-medium mt-1">Marine-grade steel with thick nylon sleeve protects against rain.</p>
                   </div>
                 </div>
@@ -250,7 +253,7 @@ export default function HomePage() {
                     <Activity className="text-primary w-6 h-6" />
                   </div>
                   <div>
-                    <h4 className="text-base font-bold text-foreground">Zero Maintenance</h4>
+                    <h3 className="text-base font-bold text-foreground">Zero Maintenance</h3>
                     <p className="text-sm text-gray-500 font-medium mt-1">No painting or anti-corrosion treatments required.</p>
                   </div>
                 </div>

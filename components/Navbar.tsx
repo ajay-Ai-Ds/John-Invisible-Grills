@@ -75,10 +75,10 @@ export default function Navbar() {
 
             {/* Desktop Right CTAs */}
             <div className="hidden lg:flex items-center space-x-4">
-              <a href="tel:+919912373373" className="flex items-center justify-center w-10 h-10 rounded-full transition-colors bg-gray-100 text-foreground hover:bg-gray-200">
+              <a href="tel:+919912373373" aria-label="Call John Invisible Grills" className="flex items-center justify-center w-10 h-10 rounded-full transition-colors bg-gray-100 text-foreground hover:bg-gray-200">
                 <Phone size={18} />
               </a>
-              <a href="https://wa.me/919912373373" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-10 h-10 rounded-full transition-colors bg-green-100 text-green-600 hover:bg-green-200">
+              <a href="https://wa.me/919912373373" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp" className="flex items-center justify-center w-10 h-10 rounded-full transition-colors bg-green-100 text-green-600 hover:bg-green-200">
                 <MessageCircle size={18} />
               </a>
               <Button href="/contact#quote-form" variant="primary" className="py-2.5 px-6 text-sm">
@@ -90,6 +90,7 @@ export default function Navbar() {
             <div className="flex items-center lg:hidden">
               <button
                 onClick={() => setMobileMenuOpen(true)}
+                aria-label="Open navigation menu"
                 className="p-2 rounded-lg focus:outline-none text-foreground bg-gray-50 hover:bg-gray-100"
               >
                 <Menu size={24} />
@@ -129,6 +130,7 @@ export default function Navbar() {
                 </div>
                 <button
                   onClick={() => setMobileMenuOpen(false)}
+                  aria-label="Close navigation menu"
                   className="p-2 bg-gray-50 rounded-full text-gray-500 hover:text-foreground"
                 >
                   <X size={20} />

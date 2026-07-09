@@ -29,7 +29,7 @@ export default function Footer() {
                 </span>
               </div>
             </Link>
-            <p className="text-sm text-gray-500 leading-relaxed font-medium">
+            <p className="text-sm text-gray-600 leading-relaxed font-medium">
               Hyderabad's premier installer of premium, high-tensile 316 marine-grade stainless steel invisible grills. We protect your family and pets without blocking your panoramic views.
             </p>
             <div className="flex items-center space-x-2 text-xs font-semibold text-primary bg-primary/5 p-3 rounded-xl border border-primary/10 w-fit">
@@ -40,7 +40,7 @@ export default function Footer() {
 
           {/* Service Pages Links Column */}
           <div>
-            <h3 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-6">
+            <h3 className="text-xs font-bold text-gray-600 uppercase tracking-widest mb-6">
               Our Safety Services
             </h3>
             <ul className="space-y-4 text-sm font-medium text-gray-600">
@@ -59,7 +59,7 @@ export default function Footer() {
 
           {/* Quick Contact Block Column */}
           <div>
-            <h3 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-6">
+            <h3 className="text-xs font-bold text-gray-600 uppercase tracking-widest mb-6">
               Get in Touch
             </h3>
             <ul className="space-y-5 text-sm font-medium text-gray-600">
@@ -87,10 +87,10 @@ export default function Footer() {
                 </a>
               </li>
               <li className="flex items-start space-x-3">
-                <Clock size={18} className="text-gray-400 flex-shrink-0 mt-0.5" />
+                <Clock size={18} className="text-gray-500 flex-shrink-0 mt-0.5" />
                 <span>
                   Mon - Sun: 8:00 AM - 9:00 PM <br />
-                  <span className="text-xs text-gray-400 mt-1 block">Open 365 Days</span>
+                  <span className="text-xs text-gray-600 mt-1 block">Open 365 Days</span>
                 </span>
               </li>
             </ul>
@@ -98,7 +98,7 @@ export default function Footer() {
 
           {/* About us snippet / Location Quick Nav */}
           <div>
-            <h3 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-6">
+            <h3 className="text-xs font-bold text-gray-600 uppercase tracking-widest mb-6">
               Primary Areas Served
             </h3>
             <div className="grid grid-cols-2 gap-3 text-sm font-medium text-gray-600">
@@ -123,10 +123,10 @@ export default function Footer() {
 
         {/* Extended Location list footer sub-panel */}
         <div className="pt-10 border-t border-black/5">
-          <span className="text-xs font-bold text-gray-400 uppercase tracking-widest block mb-6">
+          <span className="text-xs font-bold text-gray-600 uppercase tracking-widest block mb-6">
             Service Coverage Area (Across Hyderabad City)
           </span>
-          <div className="flex flex-wrap gap-x-4 gap-y-3 text-xs text-gray-500 font-medium leading-relaxed">
+          <div className="flex flex-wrap gap-x-4 gap-y-3 text-xs text-gray-600 font-medium leading-relaxed">
             {sortedLocations.map((loc, idx) => (
               <span key={loc.slug} className="flex items-center">
                 <Link href={`/locations/${loc.slug}`} className="hover:text-primary transition-colors duration-150">
@@ -138,7 +138,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 pt-8 border-t border-black/5 flex flex-col md:flex-row justify-between items-center text-xs font-medium text-gray-400">
+        <div className="mt-16 pt-8 border-t border-black/5 flex flex-col md:flex-row justify-between items-center text-xs font-medium text-gray-600">
           <p>&copy; {new Date().getFullYear()} John Invisible Grills. All Rights Reserved. Headquartered in KPHB Kukatpally.</p>
           <div className="flex space-x-8 mt-6 md:mt-0">
             <Link href="/works" className="hover:text-primary transition-colors">Recent Works</Link>

@@ -203,6 +203,7 @@ export default async function ServicePage({ params }: Props) {
                 <Link
                   href={`/services/${rel.slug}`}
                   className="text-xxs font-bold text-brass hover:text-graphite flex items-center space-x-1 group"
+                  aria-label={`Explore ${rel.title}`}
                 >
                   <span>Explore Solution</span>
                   <ChevronRight size={12} className="group-hover:translate-x-0.5 transition-transform" />

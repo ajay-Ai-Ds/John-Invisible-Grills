@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import "./globals.css";
+import dynamic from "next/dynamic";
 import UtilityBar from "@/components/UtilityBar";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import FloatingButtons from "@/components/FloatingButtons";
 import JsonLd from "@/components/JsonLd";
+
+const FloatingButtons = dynamic(() => import("@/components/FloatingButtons"));
 
 import { Inter, Poppins } from "next/font/google";
 
@@ -57,6 +59,9 @@ export default function RootLayout({
         lang="en"
         className={`${inter.variable} ${poppins.variable} h-full antialiased`}
       >
+        <head>
+          <link rel="preload" href="/images/carousl2.webp" as="image" fetchPriority="high" />
+        </head>
         <body className="min-h-full flex flex-col font-sans bg-background text-foreground">
         <JsonLd />
         {/* Skip to Content for Accessibility */}
