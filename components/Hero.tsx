@@ -22,7 +22,7 @@ export default function Hero() {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % heroImages.length);
-    }, 5000); // 5 seconds per slide
+    }, 2000); // 2 seconds per slide
     return () => clearInterval(timer);
   }, []);
 
@@ -45,18 +45,15 @@ export default function Hero() {
   return (
     <div ref={ref} className="relative w-full h-screen min-h-[500px] sm:min-h-[700px] flex items-center justify-center overflow-hidden bg-background selection:bg-primary/30">
 
-      {/* Background Architectural Carousel (Fixed Crossfade) */}
-      <div className="absolute inset-0 w-full h-full">
-        <AnimatePresence mode="popLayout">
+      {/* Background Architectural Carousel (Smooth Crossfade) */}
+      <div className="absolute inset-0 w-full h-full bg-black">
+        <AnimatePresence>
           <motion.div
             key={currentImageIndex}
-            initial={{ opacity: 0, scale: 1 }}
-            animate={{ opacity: 1, scale: 1.1 }}
-            exit={{ opacity: 0.99 }} // prevents background flash during crossfade
-            transition={{ 
-              opacity: { duration: 1.2, ease: "easeInOut" },
-              scale: { duration: 8, ease: "linear" }
-            }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.8, ease: "easeInOut" }}
             className="absolute inset-0 touch-pan-y"
             drag="x"
             dragConstraints={{ left: 0, right: 0 }}
@@ -67,7 +64,7 @@ export default function Hero() {
               src={heroImages[currentImageIndex]}
               alt="Premium Invisible Grill Installation"
               fill
-              priority={currentImageIndex === 0}
+              priority={true}
               quality={100}
               className="object-cover object-top"
               sizes="100vw"
