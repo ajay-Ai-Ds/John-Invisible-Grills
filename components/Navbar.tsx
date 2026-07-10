@@ -27,31 +27,31 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="sticky top-0 left-0 w-full z-40 glass-nav h-[90px] md:h-[110px] flex items-center transition-all duration-[400ms] select-none">
+      <nav className="sticky top-0 left-0 w-full z-40 glass-nav h-[80px] md:h-[90px] flex items-center transition-all duration-[400ms] select-none">
         <div className="max-w-[1400px] w-full mx-auto px-6 lg:px-10">
           <div className="flex items-center justify-between">
 
             {/* Logo */}
             <div className="flex-shrink-0 flex items-center">
-              <Link href="/" className="flex items-center gap-1.5 sm:gap-2 group">
-                {/* Logo Icon — left */}
-                <div className="relative w-[55px] h-[55px] sm:w-[75px] sm:h-[75px] md:w-[110px] md:h-[110px] shrink-0 group-hover:scale-105 transition-transform duration-300 ease-out overflow-visible">
+              <Link href="/" className="flex items-center gap-2 sm:gap-3 group hover:opacity-90 transition-opacity">
+                {/* Logo Icon */}
+                <div className="relative w-[50px] h-[50px] sm:w-[58px] sm:h-[58px] md:w-[68px] md:h-[68px] shrink-0">
                   <Image
                     src="/images/logo-icon.png"
                     alt="John Invisible Grills Logo"
                     fill
                     className="object-contain"
                     priority
-                    sizes="(max-width: 768px) 55px, (max-width: 1024px) 75px, 110px"
+                    sizes="(max-width: 640px) 50px, (max-width: 768px) 58px, 68px"
                   />
                 </div>
-                {/* Typographic Wordmark — right */}
+                {/* Brand Text */}
                 <div className="flex flex-col justify-center">
-                  <span className="text-[18px] sm:text-[22px] md:text-3xl font-heading font-[900] tracking-[-0.02em] text-[#111111] leading-none">
-                    JOHN INVISIBLE
+                  <span className="text-[28px] sm:text-[34px] md:text-[42px] font-heading font-[900] tracking-[-0.02em] text-[#111111] leading-[0.85]">
+                    JOHN
                   </span>
-                  <span className="block text-[10px] sm:text-[13px] md:text-[17px] font-[800] tracking-[0.25em] sm:tracking-[0.45em] text-[#E91E63] uppercase leading-none mt-1 md:mt-2">
-                    GRILLS
+                  <span className="text-[10px] sm:text-[12px] md:text-[14px] font-[800] tracking-[0.3em] sm:tracking-[0.4em] text-[#E91E63] uppercase leading-none mt-0.5">
+                    INVISIBLE GRILLS
                   </span>
                 </div>
               </Link>

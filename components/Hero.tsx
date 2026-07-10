@@ -204,7 +204,7 @@ export default function Hero() {
               </span>
               <div className="absolute inset-0 h-full w-full bg-[#25D366] scale-x-0 origin-left transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:scale-x-100"></div>
             </a>
-            
+
             <a
               href="/works"
               className="inline-flex items-center justify-center px-10 py-4.5 min-h-[56px] text-sm font-bold text-white transition-all duration-300 border border-white/20 bg-black/40 backdrop-blur-md rounded-full hover:bg-white/20 hover:border-white/50 hover:scale-105 w-full sm:w-auto tracking-[0.15em] uppercase"

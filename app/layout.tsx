@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import "./globals.css";
 import dynamic from "next/dynamic";
-import UtilityBar from "@/components/UtilityBar";
-import Navbar from "@/components/Navbar";
+import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import JsonLd from "@/components/JsonLd";
 
@@ -72,11 +71,8 @@ export default function RootLayout({
           Skip to Content
         </a>
 
-        {/* Sitewide Header Utility bar & Navbar */}
-        <header className="w-full">
-          <UtilityBar />
-          <Navbar />
-        </header>
+        {/* Sitewide Header — ContactBar + Navbar */}
+        <Header />
 
         {/* Main Content Area */}
         <main id="main-content" className="flex-grow focus:outline-none">
