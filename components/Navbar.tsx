@@ -33,24 +33,24 @@ export default function Navbar() {
 
             {/* Logo */}
             <div className="flex-shrink-0 flex items-center">
-              <Link href="/" className="flex items-center gap-2 group">
+              <Link href="/" className="flex items-center gap-1.5 sm:gap-2 group">
                 {/* Logo Icon — left */}
-                <div className="relative w-[90px] h-[90px] md:w-[110px] md:h-[110px] shrink-0 group-hover:scale-105 transition-transform duration-300 ease-out overflow-visible">
+                <div className="relative w-[55px] h-[55px] sm:w-[75px] sm:h-[75px] md:w-[110px] md:h-[110px] shrink-0 group-hover:scale-105 transition-transform duration-300 ease-out overflow-visible">
                   <Image
                     src="/images/logo-icon.png"
                     alt="John Invisible Grills Logo"
                     fill
                     className="object-contain"
                     priority
-                    sizes="110px"
+                    sizes="(max-width: 768px) 55px, (max-width: 1024px) 75px, 110px"
                   />
                 </div>
                 {/* Typographic Wordmark — right */}
                 <div className="flex flex-col justify-center">
-                  <span className="text-[22px] sm:text-[24px] md:text-3xl font-heading font-[900] tracking-[-0.02em] text-[#111111] leading-none">
+                  <span className="text-[18px] sm:text-[22px] md:text-3xl font-heading font-[900] tracking-[-0.02em] text-[#111111] leading-none">
                     JOHN INVISIBLE
                   </span>
-                  <span className="block text-[13px] sm:text-[14px] md:text-[17px] font-[800] tracking-[0.45em] text-[#E91E63] uppercase leading-none mt-1.5 md:mt-2">
+                  <span className="block text-[10px] sm:text-[13px] md:text-[17px] font-[800] tracking-[0.25em] sm:tracking-[0.45em] text-[#E91E63] uppercase leading-none mt-1 md:mt-2">
                     GRILLS
                   </span>
                 </div>
