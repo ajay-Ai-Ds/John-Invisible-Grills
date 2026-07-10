@@ -35,7 +35,7 @@ export default function Navbar() {
             <div className="flex-shrink-0 flex items-center">
               <Link href="/" className="flex items-center gap-2 sm:gap-3 group hover:opacity-90 transition-opacity">
                 {/* Logo Icon */}
-                <div className="relative w-[50px] h-[50px] sm:w-[58px] sm:h-[58px] md:w-[68px] md:h-[68px] shrink-0">
+                <div className="relative w-[62px] h-[62px] sm:w-[58px] sm:h-[58px] md:w-[68px] md:h-[68px] shrink-0">
                   <Image
                     src="/images/logo-icon.png"
                     alt="John Invisible Grills Logo"
@@ -47,10 +47,10 @@ export default function Navbar() {
                 </div>
                 {/* Brand Text */}
                 <div className="flex flex-col justify-center">
-                  <span className="text-[28px] sm:text-[34px] md:text-[42px] font-heading font-[900] tracking-[-0.02em] text-[#111111] leading-[0.85]">
+                  <span className="text-[44px] sm:text-[34px] md:text-[42px] font-heading font-[900] tracking-[-0.02em] text-[#111111] leading-[0.85]">
                     JOHN
                   </span>
-                  <span className="text-[10px] sm:text-[12px] md:text-[14px] font-[800] tracking-[0.3em] sm:tracking-[0.4em] text-[#E91E63] uppercase leading-none mt-0.5">
+                  <span className="text-[14px] sm:text-[12px] md:text-[14px] font-[800] tracking-[0.3em] sm:tracking-[0.4em] text-[#E91E63] uppercase leading-none mt-0.5">
                     INVISIBLE GRILLS
                   </span>
                 </div>

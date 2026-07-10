@@ -148,7 +148,7 @@ export default function HomePage() {
             >
               <div>
                 {/* Premium Image Container */}
-                <div className="relative w-full aspect-[4/3] sm:aspect-[16/9] md:aspect-[4/3] rounded-[20px] overflow-hidden mb-6 bg-light-bg flex items-center justify-center">
+                <div className="relative w-full aspect-square sm:aspect-[16/9] md:aspect-[4/3] rounded-[20px] overflow-hidden mb-6 bg-light-bg flex items-center justify-center">
                   <Image
                     src={service.image}
                     alt={service.title}
@@ -175,15 +175,15 @@ export default function HomePage() {
                     </div>
                   </div>
                 </div>
-                
+
                 <div className="px-4">
                   <div className="flex items-center space-x-3 mb-3">
                     <div className={`p-2 rounded-xl bg-gray-50 border border-gray-100 ${getServiceColor(service.slug)}`}>
                       {getServiceIcon(service.slug, "w-5 h-5")}
                     </div>
-                    <h3 className="text-xl font-bold text-foreground leading-tight">{service.title}</h3>
+                    <h3 className="text-3xl sm:text-xl font-bold text-foreground leading-tight">{service.title}</h3>
                   </div>
-                  <p className="text-sm text-gray-500 font-medium leading-relaxed mb-6 line-clamp-3">
+                  <p className="text-lg sm:text-sm text-gray-500 font-medium leading-relaxed mb-6 line-clamp-3">
                     {service.shortDesc}
                   </p>
                 </div>
@@ -227,7 +227,7 @@ export default function HomePage() {
                   Traditional metal structures block sunlight, decay under rain, obstruct your skyline views, and look like prisons. John Invisible Grills combine architectural beauty with robust security.
                 </p>
               </div>
-              
+
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 pt-4">
                 <div className="flex items-start space-x-4">
                   <div className="p-3 bg-white rounded-xl shadow-sm border border-black/5 flex-shrink-0">
