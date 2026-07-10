@@ -8,7 +8,7 @@ import {
 } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, Variants } from "framer-motion";
 import {
   ChevronLeft,
   ChevronRight,
@@ -184,7 +184,7 @@ export default function HeroSlider() {
   };
 
   // ── Slide variants ─────────────────────────────────────────────────────────
-  const variants = {
+  const variants: Variants = {
     enter: (dir: number) => ({
       x: dir > 0 ? "100%" : "-100%",
       opacity: 0,
@@ -208,7 +208,7 @@ export default function HeroSlider() {
   };
 
   // ── Content animation ──────────────────────────────────────────────────────
-  const contentVariants = {
+  const contentVariants: Variants = {
     hidden: { opacity: 0, y: 28 },
     visible: (delay: number) => ({
       opacity: 1,
