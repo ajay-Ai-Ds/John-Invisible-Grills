@@ -85,26 +85,7 @@ export default function RootLayout({
         {/* Floating Actions */}
         <FloatingButtons />
 
-        {/* Live Chat Integration - Tawk.to */}
-        {/* 
-          IMPORTANT CONFIGURATION NOTE:
-          Replace 'YOUR_TAWKTO_PROPERTY_ID' and 'YOUR_TAWKTO_WIDGET_ID' below 
-          with your actual Tawk.to Property ID and Widget ID, which you can retrieve 
-          from the Tawk.to dashboard (Settings -> Chat Widget -> Direct Chat Link / Embed Code).
-        */}
-        <Script id="tawk-to-integration" strategy="lazyOnload">
-          {`
-            var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-            (function(){
-            var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-            s1.async=true;
-            s1.src='https://embed.tawk.to/YOUR_TAWKTO_PROPERTY_ID/YOUR_TAWKTO_WIDGET_ID';
-            s1.charset='UTF-8';
-            s1.setAttribute('crossorigin','*');
-            s0.parentNode.insertBefore(s1,s0);
-            })();
-          `}
-        </Script>
+
       </body>
     </html>
   );
