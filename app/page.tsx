@@ -20,7 +20,7 @@ import {
 } from "lucide-react";
 import { servicesData } from "@/lib/servicesData";
 
-const Hero = dynamic(() => import("@/components/Hero"));
+const HeroSlider = dynamic(() => import("@/components/HeroSlider"));
 const ContactForm = dynamic(() => import("@/components/ContactForm"));
 const Accordion = dynamic(() => import("@/components/UI/Accordion"));
 
@@ -104,8 +104,8 @@ export default function HomePage() {
 
   return (
     <div className="w-full">
-      {/* 1. Premium Parallax Hero */}
-      <Hero />
+      {/* 1. Premium Swiper Hero Carousel */}
+      <HeroSlider />
 
       {/* 2. Trust Indicators Strip */}
       <section className="bg-primary py-8 text-white select-none">

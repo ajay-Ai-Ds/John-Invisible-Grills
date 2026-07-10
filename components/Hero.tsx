@@ -3,7 +3,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
-import { Star, ShieldCheck, ChevronDown } from "lucide-react";
+import { Star, ShieldCheck, ChevronDown, Phone } from "lucide-react";
 import Button from "@/components/UI/Button";
 
 const heroImages = [
@@ -154,6 +154,27 @@ export default function Hero() {
           >
             Protect your loved ones with premium 316 marine-grade stainless steel invisible grills, preserving the beauty of your home without compromise.
           </motion.p>
+
+          {/* Re-animating Mobile Number */}
+          <div className="pt-8 h-[80px] flex md:hidden items-center justify-center overflow-hidden w-full">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={currentImageIndex}
+                initial={{ opacity: 0, x: -60, scale: 0.95 }}
+                animate={{ opacity: 1, x: 0, scale: 1 }}
+                exit={{ opacity: 0, x: 60, scale: 0.95 }}
+                transition={{ duration: 0.8, ease: "easeInOut" }}
+                className="flex items-center space-x-3 bg-white/10 backdrop-blur-md px-6 sm:px-8 py-3 sm:py-4 rounded-full border border-white/20 shadow-2xl pointer-events-auto hover:bg-white/20 transition-colors group"
+              >
+                <div className="w-10 h-10 rounded-full bg-[#1E6AE9] flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <Phone size={20} className="text-white fill-current" />
+                </div>
+                <a href="tel:+919912373373" className="text-white font-extrabold text-xl sm:text-3xl tracking-widest">
+                  991 237 3373
+                </a>
+              </motion.div>
+            </AnimatePresence>
+          </div>
         </motion.div>
       </div>
 

@@ -92,3 +92,35 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+/* ── Hero Slider: Ken Burns zoom on active slide image ───────────── */
+.hero-ken-burns {
+  animation: kenBurns 6.5s ease-out forwards;
+  will-change: transform;
+}
+
+@keyframes kenBurns {
+  from {
+    transform: scale(1.08);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+/* ── Hero Slider: animated progress fill on active pagination dot ─── */
+.hero-progress-fill {
+  animation: heroProgressFill 3500ms linear forwards;
+  will-change: transform;
+}
+
+@keyframes heroProgressFill {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+
