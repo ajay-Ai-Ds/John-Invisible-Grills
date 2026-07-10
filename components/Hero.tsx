@@ -52,7 +52,7 @@ export default function Hero() {
             key={currentImageIndex}
             initial={{ opacity: 0, scale: 1 }}
             animate={{ opacity: 1, scale: 1.1 }}
-            exit={{ opacity: 0 }}
+            exit={{ opacity: 0.99 }} // prevents background flash during crossfade
             transition={{ 
               opacity: { duration: 1.2, ease: "easeInOut" },
               scale: { duration: 8, ease: "linear" }
@@ -74,9 +74,6 @@ export default function Hero() {
             />
           </motion.div>
         </AnimatePresence>
-        {/* Soft Animated Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent z-10 pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent z-10 pointer-events-none sm:hidden" />
       </div>
 
       {/* Floating Glass Cards / Badges */}
