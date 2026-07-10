@@ -63,22 +63,22 @@ export default function RootLayout({
       >
         <head>
           <link rel="preload" href="/images/carousl2.webp" as="image" fetchPriority="high" />
+          {/* Google Analytics - must be in <head> for Search Console verification */}
+          <Script
+            src="https://www.googletagmanager.com/gtag/js?id=G-1WL8ZQ960T"
+            strategy="beforeInteractive"
+          />
+          <Script id="google-analytics" strategy="beforeInteractive">
+            {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-1WL8ZQ960T');
+            `}
+          </Script>
         </head>
         <body className="min-h-full flex flex-col font-sans bg-background text-foreground">
 
-        {/* Google Analytics */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-1WL8ZQ960T"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-1WL8ZQ960T');
-          `}
-        </Script>
         <JsonLd />
         {/* Skip to Content for Accessibility */}
         <a
