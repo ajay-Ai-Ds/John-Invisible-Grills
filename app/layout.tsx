@@ -45,6 +45,9 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "John Invisible Grills | Balcony Safety Hyderabad",
     description: "Premium high-tensile invisible grills for apartments and villas in Hyderabad. Call 9912373373 for a free quote."
+  },
+  verification: {
+    google: "1A54fFG-XF-TNmCho4lxLYeDiXB4EAB5tp1rjijjll8"
   }
 };
 
