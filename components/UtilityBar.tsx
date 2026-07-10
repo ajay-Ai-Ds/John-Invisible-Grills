@@ -17,12 +17,12 @@ export default function UtilityBar() {
 
         {/* Right Side - Email */}
         <a
-          href="mailto:johninvisiblegrills@gmail.com"
+          href="mailto:johninvisiblegrills3717@gmail.com"
           className="flex items-center space-x-2 hover:text-white transition-colors duration-200"
-          aria-label="Email johninvisiblegrills@gmail.com"
+          aria-label="Email johninvisiblegrills3717@gmail.com"
         >
           <Mail size={12} className="text-primary" />
-          <span className="font-medium tracking-wide">johninvisiblegrills@gmail.com</span>
+          <span className="font-medium tracking-wide">johninvisiblegrills3717@gmail.com</span>
         </a>
       </div>
     </div>

@@ -24,7 +24,7 @@ export default function ContactForm({ embedded = false, prefilledService = "", p
     setLoading(true);
 
     try {
-      const response = await fetch("https://formsubmit.co/ajax/johninvisiblegrills@gmail.com", {
+      const response = await fetch("https://formsubmit.co/ajax/johninvisiblegrills3717@gmail.com", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

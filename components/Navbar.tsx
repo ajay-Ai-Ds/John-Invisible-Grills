@@ -162,7 +162,7 @@ export default function Navbar() {
                   <Phone size={18} />
                   <span>Call 9912373373</span>
                 </a>
-                <a href="mailto:johninvisiblegrills@gmail.com" className="flex items-center justify-center space-x-2 w-full py-3 bg-white border border-gray-200 rounded-full font-bold text-foreground hover:bg-gray-50 transition-colors">
+                <a href="mailto:johninvisiblegrills3717@gmail.com" className="flex items-center justify-center space-x-2 w-full py-3 bg-white border border-gray-200 rounded-full font-bold text-foreground hover:bg-gray-50 transition-colors">
                   <Mail size={18} />
                   <span>Email Us</span>
                 </a>

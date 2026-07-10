@@ -10,7 +10,7 @@ This is a production-ready, highly optimized, and SEO-optimized business website
 - **Dynamic Services Pages (14 Solutions)**: Statically pre-rendered pages detailing balcony, window, stair, villa, apartment, and child safety grills.
 - **Dynamic Location Pages (31 Areas)**: Dynamic generation of SEO-optimized landing pages for 31 Hyderabad neighborhoods with area-specific paragraphs.
 - **Integrated Lightbox Gallery**: A high-performance responsive image masonry grid with an interactive preview lightbox.
-- **No-Backend Forms**: Direct lead submissions to `johninvisiblegrills@gmail.com` using AJAX and FormSubmit.co.
+- **No-Backend Forms**: Direct lead submissions to `johninvisiblegrills3717@gmail.com` using AJAX and FormSubmit.co.
 - **Live Chat Integration**: Direct embed for Tawk.to.
 - **Full Schema Markup**: LocalBusiness (with KPHB Kukatpally geo-coordinates), Organization, WebSite, and ContactPoint JSON-LD schema sitewide.
 - **Mobile First Design**: Fully responsive across all major devices (320px to 1440px) with custom styling and a steel cable background pattern.
@@ -64,8 +64,8 @@ To edit the phone numbers, email address, or physical address, edit the followin
 
 ### B. Configuring FormSubmit.co
 
-Our forms send submissions to `johninvisiblegrills@gmail.com` using FormSubmit.co.
-1. When you deploy the site and submit a form for the first time, FormSubmit will send a **confirmation email** to `johninvisiblegrills@gmail.com`.
+Our forms send submissions to `johninvisiblegrills3717@gmail.com` using FormSubmit.co.
+1. When you deploy the site and submit a form for the first time, FormSubmit will send a **confirmation email** to `johninvisiblegrills3717@gmail.com`.
 2. Click the verification link in that email to activate the form.
 3. No backend coding or credit card is required. All form settings like subjects, templating, and redirects are already configured inside [ContactForm.tsx](file:///C:/Users/thepl/.gemini/antigravity/scratch/john-invisible-grills-website/components/ContactForm.tsx).
 

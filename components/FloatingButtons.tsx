@@ -43,7 +43,7 @@ export default function FloatingButtons() {
 
         {/* Mail Button */}
         <a
-          href="mailto:johninvisiblegrills@gmail.com"
+          href="mailto:johninvisiblegrills3717@gmail.com"
           className="bg-red-500 text-white p-3.5 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 hover:-translate-y-1 flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-red-400"
           aria-label="Email John Invisible Grills"
         >

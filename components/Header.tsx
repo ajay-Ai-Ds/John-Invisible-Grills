@@ -22,7 +22,7 @@ const BRAND = {
 
 const PHONE_RAW = "+919912373373";
 const PHONE_DISPLAY = "+91 99123 73373";
-const EMAIL = "johninvisiblegrills@gmail.com";
+const EMAIL = "johninvisiblegrills3717@gmail.com";
 const WHATSAPP_URL = "https://wa.me/919912373373";
 
 // ─── Nav Links ────────────────────────────────────────────────────────────────
