@@ -64,7 +64,7 @@ export const servicesData: Service[] = [
     metaTitle: "Child Safety Invisible Grills Hyderabad | High-Tensile Child Safety Barriers",
     metaDesc: "Ensure absolute child safety in your high-rise home. Install high-tensile, child-proof invisible grills on balconies and windows. Schedule a free site visit.",
     keyword: "Child Safety Invisible Grills",
-    image: "/images/carousel3.webp"
+    image: "/images/carousel3.jpg"
   },
   {
     slug: "pet-safety-invisible-grills",
@@ -172,7 +172,7 @@ export const servicesData: Service[] = [
     metaTitle: "Anti-Pigeon & Bird Protection Invisible Grills Hyderabad | Rust-Free",
     metaDesc: "Keep pigeons and birds away from your balconies with sleek, rust-free bird protection invisible grills. Durable SS 316 cables. Free estimate.",
     keyword: "Bird Protection Invisible Grills Hyderabad",
-    image: "/images/carousel.webp"
+    image: "/images/carousel.jpg"
   },
   {
     slug: "terrace-invisible-grills",
