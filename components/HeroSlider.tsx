@@ -355,7 +355,7 @@ export default function HeroSlider() {
       <button
         onClick={goPrev}
         aria-label="Previous slide"
-        className="absolute left-3 sm:left-5 top-1/2 -translate-y-1/2 z-30 group w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center transition-all duration-300 bg-black/25 hover:bg-white hover:scale-110 active:scale-95 border border-white/20 backdrop-blur-sm shadow-lg"
+        className="absolute left-3 sm:left-5 top-5 sm:top-6 z-30 group w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center transition-all duration-300 bg-black/25 hover:bg-white hover:scale-110 active:scale-95 border border-white/20 backdrop-blur-sm shadow-lg"
       >
         <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5 text-white group-hover:text-gray-900 transition-colors" />
       </button>
@@ -363,7 +363,7 @@ export default function HeroSlider() {
       <button
         onClick={goNext}
         aria-label="Next slide"
-        className="absolute right-3 sm:right-5 top-1/2 -translate-y-1/2 z-30 group w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center transition-all duration-300 bg-black/25 hover:bg-white hover:scale-110 active:scale-95 border border-white/20 backdrop-blur-sm shadow-lg"
+        className="absolute right-3 sm:right-5 top-5 sm:top-6 z-30 group w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center transition-all duration-300 bg-black/25 hover:bg-white hover:scale-110 active:scale-95 border border-white/20 backdrop-blur-sm shadow-lg"
       >
         <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 text-white group-hover:text-gray-900 transition-colors" />
       </button>
