@@ -1,37 +1,48 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Phone, ArrowUp, Mail } from "lucide-react";
 
 export default function FloatingButtons() {
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const [pastHeader, setPastHeader] = useState(false);
+  const headerHeightRef = useRef(0);
 
   useEffect(() => {
-    function handleScroll() {
-      if (window.scrollY > 300) {
-        setShowScrollTop(true);
-      } else {
-        setShowScrollTop(false);
-      }
+    // Measure header height once it's in the DOM
+    const header = document.getElementById("site-header");
+    if (header) {
+      headerHeightRef.current = header.getBoundingClientRect().height;
     }
-    window.addEventListener("scroll", handleScroll);
+
+    function handleScroll() {
+      const scrollY = window.scrollY;
+      const threshold = headerHeightRef.current || 100;
+      setPastHeader(scrollY > threshold);
+      setShowScrollTop(scrollY > 300);
+    }
+
+    // Run once on mount to set initial state
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const whatsappUrl = "https://wa.me/919912373373?text=Hi%20John%20Invisible%20Grills,%20I%20would%20like%20to%20get%20a%20free%20quote%20for%20invisible%20grills%20installation.";
+  const whatsappUrl =
+    "https://wa.me/919912373373?text=Hi%20John%20Invisible%20Grills,%20I%20would%20like%20to%20get%20a%20free%20quote%20for%20invisible%20grills%20installation.";
+
+  if (!pastHeader) return null;
 
   return (
     <>
       {/* Floating Buttons (Left Side) */}
       <div className="fixed bottom-6 left-6 z-50 flex flex-col space-y-3 items-start select-none">
-        
+
         {/* Call Button */}
         <a
           href="tel:+919912373373"
@@ -58,7 +69,6 @@ export default function FloatingButtons() {
           className="bg-[#25D366] text-white p-3.5 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 hover:-translate-y-1 flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-green-500"
           aria-label="Chat on WhatsApp with John Invisible Grills"
         >
-          {/* Customized SVG for WhatsApp logo */}
           <svg
             className="w-7 h-7 fill-current"
             xmlns="http://www.w3.org/2000/svg"

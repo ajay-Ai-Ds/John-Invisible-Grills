@@ -260,7 +260,7 @@ export default function HeroSlider() {
           <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent pointer-events-none z-10 sm:hidden" />
 
           {/* Slide Content */}
-          <div className="absolute inset-0 z-20 flex flex-col justify-center">
+          <div className="absolute inset-0 z-20 flex flex-col justify-end sm:justify-center pb-16 sm:pb-0">
             <div className="max-w-[1400px] w-full mx-auto px-6 sm:px-10 lg:px-14">
               <div className="max-w-xl lg:max-w-2xl space-y-4 sm:space-y-5 lg:space-y-7">
 
@@ -305,40 +305,45 @@ export default function HeroSlider() {
                   variants={contentVariants}
                   initial="hidden"
                   animate="visible"
-                  className="flex flex-wrap gap-3 pt-1 sm:pt-2"
+                  className="pt-1 sm:pt-2"
                 >
-                  {/* Call Button */}
-                  <a
-                    href="tel:+919912373373"
-                    className="flex items-center gap-2 bg-[#E91E63] text-white font-bold px-6 py-3.5 rounded-full hover:bg-opacity-90 transition-all duration-300 shadow-lg hover:shadow-xl text-xs sm:text-sm"
-                    style={{
-                      background: slide.accentColor,
-                      boxShadow: `0 4px 24px ${slide.accentColor}55`,
-                    }}
-                  >
-                    <Phone className="w-4 h-4" />
-                    <span>Call +91 99123 73373</span>
-                  </a>
+                  {/* Mobile: Call + WhatsApp side-by-side, Request Quote centered below */}
+                  {/* Desktop: all in one flex-wrap row */}
+                  <div className="flex flex-wrap gap-3 sm:flex-nowrap sm:gap-3">
 
-                  {/* WhatsApp Button */}
-                  <a
-                    href="https://wa.me/919912373373?text=Hi%20John%20Invisible%20Grills,%20I%20would%20like%20to%20request%20a%20free%20site%2520visit."
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 bg-[#10B981] text-white font-bold px-6 py-3.5 rounded-full hover:bg-emerald-700 transition-colors shadow-lg hover:shadow-xl text-xs sm:text-sm"
-                  >
-                    <MessageSquare className="w-4 h-4 fill-white/10" />
-                    <span>WhatsApp Quote</span>
-                  </a>
+                    {/* Call Button */}
+                    <a
+                      href="tel:+919912373373"
+                      className="flex items-center justify-center gap-2 text-white font-bold px-5 py-3 rounded-full hover:bg-opacity-90 transition-all duration-300 shadow-lg hover:shadow-xl text-xs sm:text-sm flex-1 sm:flex-none"
+                      style={{
+                        background: slide.accentColor,
+                        boxShadow: `0 4px 24px ${slide.accentColor}55`,
+                      }}
+                    >
+                      <Phone className="w-4 h-4 shrink-0" />
+                      <span>Call 99123 73373</span>
+                    </a>
 
-                  {/* Request Quote Button */}
-                  <Link
-                    href="#quote-form"
-                    className="flex items-center gap-2 bg-white/15 hover:bg-white/25 text-white font-bold px-6 py-3.5 rounded-full transition-all border border-white/30 backdrop-blur-xs text-xs sm:text-sm"
-                  >
-                    <span>Request Quote</span>
-                    <ArrowRight className="w-4 h-4" />
-                  </Link>
+                    {/* WhatsApp Button */}
+                    <a
+                      href="https://wa.me/919912373373?text=Hi%20John%20Invisible%20Grills,%20I%20would%20like%20to%20request%20a%20free%20site%2520visit."
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-2 bg-[#10B981] text-white font-bold px-5 py-3 rounded-full hover:bg-emerald-700 transition-colors shadow-lg hover:shadow-xl text-xs sm:text-sm flex-1 sm:flex-none"
+                    >
+                      <MessageSquare className="w-4 h-4 fill-white/10 shrink-0" />
+                      <span>WhatsApp Quote</span>
+                    </a>
+
+                    {/* Request Quote — full width below on mobile, inline on desktop */}
+                    <Link
+                      href="#quote-form"
+                      className="flex items-center justify-center gap-2 bg-white/15 hover:bg-white/25 text-white font-bold px-5 py-3 rounded-full transition-all border border-white/30 backdrop-blur-xs text-xs sm:text-sm w-full sm:w-auto"
+                    >
+                      <span>Request Quote</span>
+                      <ArrowRight className="w-4 h-4 shrink-0" />
+                    </Link>
+                  </div>
                 </motion.div>
               </div>
             </div>
