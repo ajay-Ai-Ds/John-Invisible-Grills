@@ -375,48 +375,23 @@ function MainNavbar() {
             : "none",
         }}
       >
-        <div className="max-w-[1400px] w-full mx-auto px-5 sm:px-6 lg:px-10 h-[68px] flex items-center justify-between">
+        <div className="max-w-[1400px] w-full mx-auto px-5 sm:px-6 lg:px-10 h-[68px] md:h-[80px] flex items-center justify-between">
 
           {/* Logo */}
           <Link
             href="/"
             aria-label="John Invisible Grills — go to home page"
-            className="flex items-center gap-2.5 shrink-0 group rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E91048] focus-visible:ring-offset-2"
+            className="flex items-center shrink-0 group rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E91048] focus-visible:ring-offset-2"
           >
-            <div
-              className="relative shrink-0 transition-transform duration-200 group-hover:scale-[1.04]"
-              style={{ width: "58px", height: "58px" }}
-            >
+            <div className="relative h-[44px] w-[190px] md:h-[58px] md:w-[260px] shrink-0 transition-transform duration-200 group-hover:scale-[1.02]">
               <Image
-                src="/images/logoicon.png"
-                alt=""
+                src="/images/johnlogo.png"
+                alt="John Invisible Grills"
                 fill
-                sizes="58px"
-                className="object-contain"
+                sizes="(max-width: 768px) 190px, 260px"
+                className="object-contain object-left"
                 priority
-                aria-hidden="true"
               />
-            </div>
-            <div className="flex flex-col justify-center gap-[3px] leading-none">
-              <span
-                className="font-heading font-black tracking-[-0.02em] leading-none"
-                style={{
-                  color: BRAND.neutralDark,
-                  fontSize: "clamp(20px, 2.8vw, 26px)",
-                }}
-              >
-                JOHN
-              </span>
-              <span
-                className="font-sans font-extrabold uppercase leading-none"
-                style={{
-                  color: BRAND.primary,
-                  fontSize: "clamp(7.5px, 0.9vw, 9.5px)",
-                  letterSpacing: "0.30em",
-                }}
-              >
-                Invisible Grills
-              </span>
             </div>
           </Link>
 
