@@ -17,6 +17,8 @@ import {
   Award,
   CheckCircle,
   Star,
+  Phone,
+  MessageSquare,
 } from "lucide-react";
 
 // ─── Slide Data ──────────────────────────────────────────────────────────────
@@ -247,15 +249,15 @@ export default function HeroSlider() {
               fill
               priority={current === 0}
               loading={current === 0 ? "eager" : "lazy"}
-              className="object-cover object-center scale-[1.04] hero-ken-burns"
+              className="object-cover object-center lg:object-top scale-[1.04] hero-ken-burns brightness-[1.1] contrast-[1.02]"
               sizes="100vw"
-              quality={85}
+              quality={95}
             />
           </div>
 
-          {/* Gradient overlays */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/10 pointer-events-none z-10" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none z-10 sm:hidden" />
+          {/* Gradient overlays — Lightened to reveal details */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/35 to-transparent pointer-events-none z-10" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent pointer-events-none z-10 sm:hidden" />
 
           {/* Slide Content */}
           <div className="absolute inset-0 z-20 flex flex-col justify-center">
@@ -303,25 +305,39 @@ export default function HeroSlider() {
                   variants={contentVariants}
                   initial="hidden"
                   animate="visible"
-                  className="flex flex-col sm:flex-row gap-3 pt-1 sm:pt-2"
+                  className="flex flex-wrap gap-3 pt-1 sm:pt-2"
                 >
-                  <Link
-                    href={slide.ctaLink}
-                    className="group inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-3.5 rounded-full text-xs sm:text-sm font-bold text-white tracking-wide uppercase transition-all duration-300 hover:scale-105 hover:shadow-2xl active:scale-95"
+                  {/* Call Button */}
+                  <a
+                    href="tel:+919912373373"
+                    className="flex items-center gap-2 bg-[#E91E63] text-white font-bold px-6 py-3.5 rounded-full hover:bg-opacity-90 transition-all duration-300 shadow-lg hover:shadow-xl text-xs sm:text-sm"
                     style={{
                       background: slide.accentColor,
                       boxShadow: `0 4px 24px ${slide.accentColor}55`,
                     }}
                   >
-                    <span>{slide.ctaText}</span>
-                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                  </Link>
+                    <Phone className="w-4 h-4" />
+                    <span>Call +91 99123 73373</span>
+                  </a>
 
-                  <Link
-                    href={slide.ctaSecondaryLink}
-                    className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-3.5 rounded-full text-xs sm:text-sm font-bold text-white tracking-wide uppercase transition-all duration-300 border border-white/30 bg-white/10 backdrop-blur-sm hover:bg-white/20 hover:scale-105 active:scale-95"
+                  {/* WhatsApp Button */}
+                  <a
+                    href="https://wa.me/919912373373?text=Hi%20John%20Invisible%20Grills,%20I%20would%20like%20to%20request%20a%20free%20site%2520visit."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 bg-[#10B981] text-white font-bold px-6 py-3.5 rounded-full hover:bg-emerald-700 transition-colors shadow-lg hover:shadow-xl text-xs sm:text-sm"
                   >
-                    {slide.ctaSecondaryText}
+                    <MessageSquare className="w-4 h-4 fill-white/10" />
+                    <span>WhatsApp Quote</span>
+                  </a>
+
+                  {/* Request Quote Button */}
+                  <Link
+                    href="#quote-form"
+                    className="flex items-center gap-2 bg-white/15 hover:bg-white/25 text-white font-bold px-6 py-3.5 rounded-full transition-all border border-white/30 backdrop-blur-xs text-xs sm:text-sm"
+                  >
+                    <span>Request Quote</span>
+                    <ArrowRight className="w-4 h-4" />
                   </Link>
                 </motion.div>
               </div>

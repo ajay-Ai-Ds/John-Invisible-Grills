@@ -47,10 +47,10 @@ export default function Navbar() {
                 </div>
                 {/* Brand Text */}
                 <div className="flex flex-col justify-center">
-                  <span className="text-[44px] sm:text-[34px] md:text-[42px] font-heading font-[900] tracking-[-0.02em] text-[#111111] leading-[0.85]">
+                  <span className="text-[48px] sm:text-[38px] md:text-[48px] font-heading font-[900] tracking-[-0.02em] text-[#111111] leading-[0.85]">
                     JOHN
                   </span>
-                  <span className="text-[14px] sm:text-[12px] md:text-[14px] font-[800] tracking-[0.3em] sm:tracking-[0.4em] text-[#E91E63] uppercase leading-none mt-0.5">
+                  <span className="text-[16px] sm:text-[14px] md:text-[16px] font-[800] tracking-[0.3em] sm:tracking-[0.4em] text-[#E91E63] uppercase leading-none mt-0.5">
                     INVISIBLE GRILLS
                   </span>
                 </div>
