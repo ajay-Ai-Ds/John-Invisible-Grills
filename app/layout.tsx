@@ -51,12 +51,12 @@ export default function RootLayout({
       >
         <head>
           <link rel="preload" href="/images/carousl2.webp" as="image" fetchPriority="high" />
-          {/* Google Analytics - must be in <head> for Search Console verification */}
+          {/* Google Analytics - lazy loaded for maximum performance */}
           <Script
             src="https://www.googletagmanager.com/gtag/js?id=G-1WL8ZQ960T"
-            strategy="beforeInteractive"
+            strategy="lazyOnload"
           />
-          <Script id="google-analytics" strategy="beforeInteractive">
+          <Script id="google-analytics" strategy="lazyOnload">
             {`
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}

@@ -8,7 +8,7 @@ import {
 } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion, AnimatePresence, Variants } from "framer-motion";
+import { m as motion, LazyMotion, domAnimation, AnimatePresence, Variants } from "framer-motion";
 import {
   ChevronLeft,
   ChevronRight,
@@ -223,6 +223,7 @@ export default function HeroSlider() {
   const { Icon } = slide;
 
   return (
+    <LazyMotion features={domAnimation}>
     <section
       aria-label="Hero image carousel"
       className="relative w-full h-[520px] sm:h-[640px] lg:h-[90vh] lg:min-h-[720px] overflow-hidden select-none bg-gray-900"
@@ -411,5 +412,6 @@ export default function HeroSlider() {
         </span>
       </div>
     </section>
+    </LazyMotion>
   );
 }
