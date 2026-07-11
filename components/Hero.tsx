@@ -188,29 +188,37 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 1.1, ease: "easeOut" }}
-            className="pt-6 sm:pt-10 flex flex-col sm:flex-row gap-5 w-full sm:w-auto"
+            className="pt-6 sm:pt-10 w-full sm:w-auto"
           >
-            <a
-              href="https://wa.me/919912373373?text=Hi%20John%20Invisible%20Grills,%20I%20would%20like%20to%20book%20a%20free%20site%20visit%20for%20invisible%20grills."
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative inline-flex items-center justify-center px-10 py-4.5 min-h-[56px] text-sm font-bold text-white transition-all duration-500 bg-[#25D366]/20 border border-[#25D366]/50 backdrop-blur-lg rounded-full overflow-hidden hover:scale-105 hover:shadow-[0_0_40px_rgba(37,211,102,0.4)] w-full sm:w-auto"
+            {/* Horizontal scroll on mobile, normal flex row on desktop */}
+            <div
+              className="hero-cta-scroll flex flex-row gap-3 sm:gap-5 overflow-x-auto sm:overflow-x-visible pb-1 sm:pb-0"
+              style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
             >
-              <span className="relative z-10 flex items-center space-x-2 tracking-[0.1em] uppercase group-hover:text-white transition-colors duration-300">
-                <svg className="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                  <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.457L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.792 1.451 5.485.002 9.952-4.466 9.955-9.956.002-2.661-1.026-5.163-2.898-7.036-1.874-1.874-4.377-2.903-7.039-2.904-5.489 0-9.957 4.468-9.96 9.959-.002 1.701.444 3.364 1.294 4.814l-.973 3.553 3.641-.956zm10.963-7.399c-.3-.15-1.77-.875-2.046-.975-.276-.1-.477-.15-.677.15-.2.3-.775.975-.95 1.175-.175.2-.35.225-.65.075-1.25-.625-2.046-1.25-2.868-2.663-.175-.3-.075-.463.075-.613.138-.138.3-.35.45-.525.15-.175.2-.3.3-.5.1-.2.05-.375-.025-.525-.075-.15-.677-1.631-.927-2.231-.243-.587-.492-.507-.677-.516-.175-.008-.375-.01-.575-.01-.2 0-.525.075-.8.376-.275.3-1.05 1.026-1.05 2.502 0 1.477 1.075 2.903 1.225 3.102.15.2 2.11 3.22 5.111 4.517.714.309 1.272.494 1.707.633.717.228 1.368.196 1.884.118.575-.088 1.77-.724 2.02-1.427.25-.702.25-1.3.175-1.427-.075-.125-.275-.2-.575-.35z" />
-                </svg>
-                <span>Book a Free Site Visit</span>
-              </span>
-              <div className="absolute inset-0 h-full w-full bg-[#25D366] scale-x-0 origin-left transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:scale-x-100"></div>
-            </a>
+              <a
+                href="https://wa.me/919912373373?text=Hi%20John%20Invisible%20Grills,%20I%20would%20like%20to%20book%20a%20free%20site%20visit%20for%20invisible%20grills."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative inline-flex items-center justify-center px-8 py-4 min-h-[56px] text-sm font-bold text-white transition-all duration-500 bg-[#25D366]/20 border border-[#25D366]/50 backdrop-blur-lg rounded-full overflow-hidden hover:scale-105 hover:shadow-[0_0_40px_rgba(37,211,102,0.4)] shrink-0 whitespace-nowrap"
+                style={{ minWidth: "180px" }}
+              >
+                <span className="relative z-10 flex items-center space-x-2 tracking-[0.1em] uppercase group-hover:text-white transition-colors duration-300">
+                  <svg className="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.457L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.792 1.451 5.485.002 9.952-4.466 9.955-9.956.002-2.661-1.026-5.163-2.898-7.036-1.874-1.874-4.377-2.903-7.039-2.904-5.489 0-9.957 4.468-9.96 9.959-.002 1.701.444 3.364 1.294 4.814l-.973 3.553 3.641-.956zm10.963-7.399c-.3-.15-1.77-.875-2.046-.975-.276-.1-.477-.15-.677.15-.2.3-.775.975-.95 1.175-.175.2-.35.225-.65.075-1.25-.625-2.046-1.25-2.868-2.663-.175-.3-.075-.463.075-.613.138-.138.3-.35.45-.525.15-.175.2-.3.3-.5.1-.2.05-.375-.025-.525-.075-.15-.677-1.631-.927-2.231-.243-.587-.492-.507-.677-.516-.175-.008-.375-.01-.575-.01-.2 0-.525.075-.8.376-.275.3-1.05 1.026-1.05 2.502 0 1.477 1.075 2.903 1.225 3.102.15.2 2.11 3.22 5.111 4.517.714.309 1.272.494 1.707.633.717.228 1.368.196 1.884.118.575-.088 1.77-.724 2.02-1.427.25-.702.25-1.3.175-1.427-.075-.125-.275-.2-.575-.35z" />
+                  </svg>
+                  <span>Book a Free Site Visit</span>
+                </span>
+                <div className="absolute inset-0 h-full w-full bg-[#25D366] scale-x-0 origin-left transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:scale-x-100"></div>
+              </a>
 
-            <a
-              href="/works"
-              className="inline-flex items-center justify-center px-10 py-4.5 min-h-[56px] text-sm font-bold text-white transition-all duration-300 border border-white/20 bg-black/40 backdrop-blur-md rounded-full hover:bg-white/20 hover:border-white/50 hover:scale-105 w-full sm:w-auto tracking-[0.15em] uppercase"
-            >
-              View Portfolio
-            </a>
+              <a
+                href="/works"
+                className="inline-flex items-center justify-center px-8 py-4 min-h-[56px] text-sm font-bold text-white transition-all duration-300 border border-white/20 bg-black/40 backdrop-blur-md rounded-full hover:bg-white/20 hover:border-white/50 hover:scale-105 shrink-0 whitespace-nowrap tracking-[0.15em] uppercase"
+                style={{ minWidth: "170px" }}
+              >
+                View Portfolio
+              </a>
+            </div>
           </motion.div>
         </motion.div>
       </div>

@@ -1,9 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:wght@400;500;600;700;800;900&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Inter", var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-heading: "Poppins", var(--font-poppins), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-heading: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 
   --color-background: #FFFFFF;
   --color-foreground: #111111;
@@ -125,3 +124,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
+
+/* Hero CTA: hide scrollbar on horizontal scroll row (mobile) */
+.hero-cta-scroll {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.hero-cta-scroll::-webkit-scrollbar {
+  display: none;
+}
