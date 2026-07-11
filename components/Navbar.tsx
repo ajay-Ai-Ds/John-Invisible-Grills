@@ -35,14 +35,14 @@ export default function Navbar() {
             <div className="flex-shrink-0 flex items-center">
               <Link href="/" className="flex items-center gap-2 sm:gap-3 group hover:opacity-90 transition-opacity">
                 {/* Logo Icon */}
-                <div className="relative w-[62px] h-[62px] sm:w-[58px] sm:h-[58px] md:w-[68px] md:h-[68px] shrink-0">
+                <div className="relative w-[72px] h-[72px] sm:w-[68px] sm:h-[68px] md:w-[78px] md:h-[78px] shrink-0">
                   <Image
                     src="/images/logoicon.png"
                     alt="John Invisible Grills Logo"
                     fill
                     className="object-contain"
                     priority
-                    sizes="(max-width: 640px) 50px, (max-width: 768px) 58px, 68px"
+                    sizes="(max-width: 640px) 68px, (max-width: 768px) 68px, 78px"
                   />
                 </div>
                 {/* Brand Text */}
@@ -121,13 +121,13 @@ export default function Navbar() {
             >
               <div className="p-6 flex items-center justify-between border-b border-gray-100">
                 <div className="flex items-center space-x-3">
-                  <div className="relative w-10 h-10 shrink-0">
+                  <div className="relative w-12 h-12 shrink-0">
                     <Image
                       src="/images/logoicon.png"
                       alt="John Invisible Grills Logo"
                       fill
                       className="object-contain"
-                      sizes="40px"
+                      sizes="48px"
                     />
                   </div>
                   <span className="text-lg font-bold text-foreground">Menu</span>

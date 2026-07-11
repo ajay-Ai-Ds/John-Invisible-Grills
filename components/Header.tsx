@@ -385,13 +385,13 @@ function MainNavbar() {
           >
             <div
               className="relative shrink-0 transition-transform duration-200 group-hover:scale-[1.04]"
-              style={{ width: "46px", height: "46px" }}
+              style={{ width: "58px", height: "58px" }}
             >
               <Image
                 src="/images/logoicon.png"
                 alt=""
                 fill
-                sizes="46px"
+                sizes="58px"
                 className="object-contain"
                 priority
                 aria-hidden="true"
