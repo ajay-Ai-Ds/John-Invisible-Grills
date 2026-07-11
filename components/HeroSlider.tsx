@@ -251,7 +251,7 @@ export default function HeroSlider() {
               loading={current === 0 ? "eager" : "lazy"}
               className="object-cover object-center lg:object-top scale-[1.04] hero-ken-burns brightness-[1.1] contrast-[1.02]"
               sizes="100vw"
-              quality={95}
+              quality={85}
             />
           </div>
 
