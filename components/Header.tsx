@@ -388,7 +388,7 @@ function MainNavbar() {
               style={{ width: "46px", height: "46px" }}
             >
               <Image
-                src="/images/logo-icon3.png"
+                src="/images/logoicon.png"
                 alt=""
                 fill
                 sizes="46px"

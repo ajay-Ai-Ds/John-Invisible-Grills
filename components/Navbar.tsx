@@ -37,7 +37,7 @@ export default function Navbar() {
                 {/* Logo Icon */}
                 <div className="relative w-[62px] h-[62px] sm:w-[58px] sm:h-[58px] md:w-[68px] md:h-[68px] shrink-0">
                   <Image
-                    src="/images/logo-icon.png"
+                    src="/images/logoicon.png"
                     alt="John Invisible Grills Logo"
                     fill
                     className="object-contain"
@@ -123,7 +123,7 @@ export default function Navbar() {
                 <div className="flex items-center space-x-3">
                   <div className="relative w-10 h-10 shrink-0">
                     <Image
-                      src="/images/logo-icon.png"
+                      src="/images/logoicon.png"
                       alt="John Invisible Grills Logo"
                       fill
                       className="object-contain"
