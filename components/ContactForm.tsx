@@ -19,34 +19,19 @@ export default function ContactForm({ embedded = false, prefilledService = "", p
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
 
     try {
-      const response = await fetch("https://formsubmit.co/ajax/johninvisiblegrills3717@gmail.com", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Accept": "application/json"
-        },
-        body: JSON.stringify({
-          Name: formData.name,
-          Phone: formData.phone,
-          Area: formData.area,
-          _subject: `New Invisible Grill Enquiry - ${formData.area || "Hyderabad"}`,
-          _template: "basic",
-          _captcha: "false"
-        })
-      });
-
-      if (response.ok) {
-        setSubmitted(true);
-      } else {
-        alert("There was an error sending your enquiry. Please try calling us directly at 9912373373.");
-      }
+      const message = `*New Website Enquiry*%0A%0A*Name:* ${formData.name}%0A*Phone:* ${formData.phone}%0A*Area:* ${formData.area}`;
+      const whatsappUrl = `https://wa.me/919912373373?text=${message}`;
+      
+      window.open(whatsappUrl, "_blank");
+      
+      setSubmitted(true);
     } catch {
-      alert("Network error. Please contact us via phone or WhatsApp.");
+      alert("Error redirecting to WhatsApp. Please contact us directly at 9912373373.");
     } finally {
       setLoading(false);
     }

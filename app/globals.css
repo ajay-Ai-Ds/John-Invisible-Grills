@@ -18,6 +18,10 @@
   --color-service-bird: #F97316;
   --color-service-stair: #06B6D4;
   --color-service-custom: #F59E0B;
+
+  --color-brass: #E91E63;
+  --color-graphite: #111111;
+  --color-steel: #6b7280;
 }
 
 :root {
