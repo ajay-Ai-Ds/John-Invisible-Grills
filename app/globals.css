@@ -137,3 +137,26 @@ h1, h2, h3, h4, h5, h6 {
 .hero-cta-scroll::-webkit-scrollbar {
   display: none;
 }
+
+/* ── Gallery Carousel: Infinite Scroll ─── */
+@keyframes infiniteScroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-infinite-scroll {
+  animation: infiniteScroll 35s linear infinite;
+  will-change: transform;
+  /* width is managed by the layout */
+}
+
+/* Pause on hover only on devices that support hover (desktop) */
+@media (hover: hover) and (pointer: fine) {
+  .animate-infinite-scroll:hover {
+    animation-play-state: paused;
+  }
+}

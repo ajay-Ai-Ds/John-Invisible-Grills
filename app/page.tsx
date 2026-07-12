@@ -12,8 +12,6 @@ import {
   Award,
   Eye,
   Activity,
-  MapPin,
-  CalendarDays,
   Baby,
   Layers,
   HeartHandshake
@@ -22,7 +20,7 @@ import { servicesData } from "@/lib/servicesData";
 
 const HeroSlider = dynamic(() => import("@/components/HeroSlider"));
 const ContactForm = dynamic(() => import("@/components/ContactForm"));
-const Accordion = dynamic(() => import("@/components/UI/Accordion"));
+const GalleryCarousel = dynamic(() => import("@/components/GalleryCarousel"));
 
 // Accent colors mapping based on globals.css variables
 function getServiceColor(slug: string) {
@@ -68,28 +66,7 @@ function getServiceIcon(slug: string, className: string) {
 }
 
 export default function HomePage() {
-  const homeFaqs = [
-    {
-      question: "Why should I choose John Invisible Grills over traditional iron grills?",
-      answer: "Traditional iron grills block your view, block sunlight, rust easily under monsoon rains, require periodic painting, and look like enclosures. John Invisible Grills use marine-grade, nylon-coated SS 316 cables which are completely rust-proof, support up to 400kg of tension, are virtually invisible from a distance, and can be cut using wire cutters during emergency evacuations."
-    },
-    {
-      question: "Are your invisible grills strong enough to protect my children and pets?",
-      answer: "Absolutely. Our invisible grills are made of high-tensile 316 stainless steel wires, tensioned to support up to 400kg. For children and pets, we recommend a gap spacing of 2 inches (50mm) to 3 inches (75mm), making it impossible for toddlers or pets to slip through or climb over."
-    },
-    {
-      question: "Where is John Invisible Grills based and which areas do you serve?",
-      answer: "Our head office is in KPHB (Kukatpally), Hyderabad. We provide direct installation and support services all across Hyderabad city, including Miyapur, Kondapur, Gachibowli, Madhapur, Hitech City, Banjara Hills, Jubilee Hills, Secunderabad, and more. Our Kukatpally location ensures the fastest response time in western Hyderabad."
-    },
-    {
-      question: "Do you offer a warranty on the invisible safety grills?",
-      answer: "Yes, we provide an official warranty on our SS 316 safety cables and fittings. This covers rusting, track alignment, and tension adjustments. Contact our KPHB service branch for details."
-    },
-    {
-      question: "How long does a typical installation take?",
-      answer: "A standard apartment balcony installation takes about 3 to 5 hours. Our professional installation squad uses dust-free drilling equipment to keep your home tidy during the process."
-    }
-  ];
+
 
   const processSteps = [
     { num: "01", title: "Enquiry", desc: "Submit your details or call our team to register your query." },
@@ -213,7 +190,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 4. Why Invisible Grills (Visual comparison) */}
+      {/* 4. Gallery Carousel */}
+      <GalleryCarousel />
+
+      {/* 5. Why Invisible Grills (Visual comparison) */}
       <section className="py-24 bg-light-bg border-y border-black/5">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -321,7 +301,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 5. Installation Process */}
+      {/* 6. Installation Process */}
       <section className="py-24 max-w-[1400px] mx-auto px-6 lg:px-10">
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
           <span className="text-xs font-bold text-primary uppercase tracking-widest block">Seamless Execution</span>
@@ -346,7 +326,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 6. Contact Form & Google Map */}
+      {/* 7. Contact Form & Google Map */}
       <section id="quote-form" className="py-24 bg-light-bg">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
