@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Phone, Mail, MapPin, Clock, Shield } from "lucide-react";
 import { servicesData } from "@/lib/servicesData";
 import { locationsData } from "@/lib/locationsData";
+import EmailLink from "@/components/UI/EmailLink";
 
 export default function Footer() {
   const sortedLocations = [...locationsData].sort((a, b) => a.name.localeCompare(b.name));
@@ -82,9 +83,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center space-x-3">
                 <Mail size={18} className="text-gray-400 flex-shrink-0" />
-                <a href="mailto:johninvisiblegrills3717@gmail.com" className="hover:text-primary transition-colors">
-                  johninvisiblegrills3717@gmail.com
-                </a>
+                <EmailLink className="hover:text-primary transition-colors" />
               </li>
               <li className="flex items-start space-x-3">
                 <Clock size={18} className="text-gray-500 flex-shrink-0 mt-0.5" />

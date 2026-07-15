@@ -1,6 +1,7 @@
 import React from "react";
 import ContactForm from "@/components/ContactForm";
 import { Phone, Mail, MapPin, Clock, MessageSquare } from "lucide-react";
+import EmailLink from "@/components/UI/EmailLink";
 
 export const metadata = {
   title: "Contact Us | John Invisible Grills Hyderabad",
@@ -64,9 +65,7 @@ export default function ContactPage() {
                 <Mail className="text-brass w-5 h-5 mt-0.5" />
                 <div className="flex flex-col">
                   <span className="text-xxs font-bold text-steel uppercase tracking-wider">Email Address</span>
-                  <a href="mailto:johninvisiblegrills3717@gmail.com" className="text-sm font-bold text-graphite hover:text-brass transition-colors mt-1">
-                    johninvisiblegrills3717@gmail.com
-                  </a>
+                  <EmailLink className="text-sm font-bold text-graphite hover:text-brass transition-colors mt-1" />
                 </div>
               </div>
 

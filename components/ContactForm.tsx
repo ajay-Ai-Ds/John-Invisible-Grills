@@ -14,24 +14,63 @@ export default function ContactForm({ embedded = false, prefilledService = "", p
     name: "",
     phone: "",
     area: prefilledArea || "",
+    website: "", // Honeypot field
+    email_trap: "", // Honeypot field
   });
   
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [errorMsg, setErrorMsg] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
+    setErrorMsg("");
 
     try {
-      const message = `*New Website Enquiry*%0A%0A*Name:* ${formData.name}%0A*Phone:* ${formData.phone}%0A*Area:* ${formData.area}`;
+      // 1. Client-side sanitization and validation
+      const sanitizedName = formData.name.trim();
+      const sanitizedPhone = formData.phone.trim();
+      const sanitizedArea = formData.area.trim();
+
+      if (!sanitizedName || !sanitizedPhone || !sanitizedArea) {
+        throw new Error("All fields are required.");
+      }
+
+      if (!/^[0-9]{10}$/.test(sanitizedPhone)) {
+        throw new Error("Please enter a valid 10-digit mobile number.");
+      }
+
+      // 2. Call /api/contact route
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: sanitizedName,
+          phone: sanitizedPhone,
+          area: sanitizedArea,
+          website: formData.website,
+          email_trap: formData.email_trap,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || "Something went wrong. Please try again.");
+      }
+
+      // 3. Build message with secure/sanitized inputs from API response
+      const verifiedData = result.data || { name: sanitizedName, phone: sanitizedPhone, area: sanitizedArea };
+      const message = `*New Website Enquiry*%0A%0A*Name:* ${encodeURIComponent(verifiedData.name)}%0A*Phone:* ${encodeURIComponent(verifiedData.phone)}%0A*Area:* ${encodeURIComponent(verifiedData.area)}`;
       const whatsappUrl = `https://wa.me/919912373373?text=${message}`;
       
       window.open(whatsappUrl, "_blank");
-      
       setSubmitted(true);
-    } catch {
-      alert("Error redirecting to WhatsApp. Please contact us directly at 9912373373.");
+    } catch (err: any) {
+      setErrorMsg(err.message || "Error redirecting to WhatsApp. Please contact us directly at 9912373373.");
     } finally {
       setLoading(false);
     }
@@ -46,7 +85,17 @@ export default function ContactForm({ embedded = false, prefilledService = "", p
           Thank you for contacting John Invisible Grills. Our safety specialists from Kukatpally will call you shortly to arrange a free site measurement visit.
         </p>
         <button
-          onClick={() => setSubmitted(false)}
+          onClick={() => {
+            setFormData({
+              name: "",
+              phone: "",
+              area: prefilledArea || "",
+              website: "",
+              email_trap: "",
+            });
+            setErrorMsg("");
+            setSubmitted(false);
+          }}
           className="mt-4 text-xs font-bold text-brass uppercase hover:underline"
         >
           Send another enquiry
@@ -65,6 +114,26 @@ export default function ContactForm({ embedded = false, prefilledService = "", p
       </p>
       
       <form onSubmit={handleSubmit} className="space-y-4">
+        {/* Honeypot Fields (Invisible to human users but parsed by spam bots) */}
+        <div className="absolute opacity-0 pointer-events-none -z-10 w-0 h-0 overflow-hidden">
+          <input
+            type="text"
+            name="website"
+            value={formData.website}
+            onChange={(e) => setFormData({ ...formData, website: e.target.value })}
+            tabIndex={-1}
+            autoComplete="off"
+          />
+          <input
+            type="text"
+            name="email_trap"
+            value={formData.email_trap}
+            onChange={(e) => setFormData({ ...formData, email_trap: e.target.value })}
+            tabIndex={-1}
+            autoComplete="off"
+          />
+        </div>
+
         {/* Name Field */}
         <div>
           <label htmlFor="name" className="block text-xs font-bold text-graphite uppercase tracking-wide mb-1">
@@ -114,7 +183,12 @@ export default function ContactForm({ embedded = false, prefilledService = "", p
           />
         </div>
 
-
+        {/* Validation Errors Box */}
+        {errorMsg && (
+          <div className="text-red-500 text-xs font-semibold bg-red-50 p-3 rounded border border-red-200 leading-snug">
+            {errorMsg}
+          </div>
+        )}
 
         {/* Submit Button */}
         <button

@@ -3,6 +3,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Phone, ArrowUp, Mail } from "lucide-react";
 
+import EmailLink from "@/components/UI/EmailLink";
+
 export default function FloatingButtons() {
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [pastHeader, setPastHeader] = useState(false);
@@ -53,13 +55,12 @@ export default function FloatingButtons() {
         </a>
 
         {/* Mail Button */}
-        <a
-          href="mailto:johninvisiblegrills3717@gmail.com"
+        <EmailLink
+          iconOnly={true}
           className="bg-red-500 text-white p-3.5 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 hover:-translate-y-1 flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-red-400"
-          aria-label="Email John Invisible Grills"
         >
           <Mail size={24} />
-        </a>
+        </EmailLink>
 
         {/* Floating WhatsApp Button */}
         <a
